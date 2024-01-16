@@ -13,6 +13,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -50,9 +51,9 @@ android {
 }
 
 dependencies {
-
+    val stoneSdkVersion = "4.8.4"
     implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
     implementation(platform("androidx.compose:compose-bom:2023.08.00"))
     implementation("androidx.compose.ui:ui")
@@ -66,4 +67,16 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    //STONE
+    implementation("br.com.stone:stone-sdk:$stoneSdkVersion")
+    implementation("br.com.stone:stone-sdk-posandroid:$stoneSdkVersion")
+    //debugImplementation("br.com.stone.sdk.android:envconfig:$stoneSdkVersion")
+    //INGENICO
+    implementation("br.com.stone:stone-sdk-posandroid-ingenico:$stoneSdkVersion")
+    //SUNMI
+    implementation("br.com.stone:stone-sdk-posandroid-sunmi:$stoneSdkVersion")
+    //MULTIDEX
+    implementation("com.android.support:multidex:2.0.1")
+
+
 }
